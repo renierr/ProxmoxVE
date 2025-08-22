@@ -13,7 +13,7 @@ body:
 
         Thank you for taking the time to report an issue! Please provide as much detail as possible to help us address the problem efficiently.  
 
-     
+
   - type: input
     id: guidelines
     attributes:
@@ -34,7 +34,7 @@ body:
     id: script_command
     attributes:
       label: 📂 What was the exact command used to execute the script?
-      placeholder: "e.g., bash -c \"$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/zigbee2mqtt.sh)\" or \"update\""
+      placeholder: "e.g., bash -c \"$(curl -fsSL https://raw.githubusercontent.com/renierr/ProxmoxVE/main/ct/zigbee2mqtt.sh)\" or \"update\""
     validations:
       required: true
 
@@ -56,7 +56,7 @@ body:
     attributes:
       label: 🖥️ Which Linux distribution are you using?
       options:
-        - 
+        -
         - Alpine
         - Debian 11
         - Debian 12

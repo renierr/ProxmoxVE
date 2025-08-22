@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/renierr/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Slaviša Arežina (tremor021)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -30,8 +30,8 @@ function update_script() {
   fi
   RELEASE=$(curl -s https://api.github.com/repos/Casvt/Kapowarr/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
   if [[ "${RELEASE}" != "$(cat $HOME/.kapowarr)" ]] || [[ ! -f $HOME/.kapowarr ]]; then
-    setup_uv 
-    
+    setup_uv
+
     msg_info "Stopping $APP"
     systemctl stop kapowarr
     msg_ok "Stopped $APP"

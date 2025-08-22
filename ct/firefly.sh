@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/renierr/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: quantumryuu | Co-Author: Slaviša Arežina (tremor021)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -46,7 +46,7 @@ function update_script() {
     rm -rf /opt/firefly/storage
     cp /opt/.env /opt/firefly/.env
     cp -r /opt/storage /opt/firefly/storage
-    
+
     chown -R www-data:www-data /opt/firefly
     find /opt/firefly/storage -type d -exec chmod 775 {} \;
     find /opt/firefly/storage -type f -exec chmod 664 {} \;

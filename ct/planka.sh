@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/refs/heads/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/renierr/ProxmoxVE/refs/heads/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Slaviša Arežina (tremor021)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -47,7 +47,7 @@ function update_script() {
     fetch_and_deploy_gh_release "planka" "plankanban/planka" "prebuild" "latest" "/opt/planka" "planka-prebuild.zip"
     cd /opt/planka
     $STD npm install
-    
+
     msg_info "Restoring data"
     mv /opt/planka-backup/.env /opt/planka/
     [ -d /opt/planka-backup/favicons ] && find /opt/planka-backup/favicons -maxdepth 1 -type f -exec mv -t /opt/planka/public/favicons {} +

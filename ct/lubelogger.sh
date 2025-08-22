@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/renierr/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: kristocopani
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -67,7 +67,7 @@ function update_script() {
     msg_info "Cleaning up"
     rm -rf /tmp/lubeloggerData
     msg_ok "Cleaned"
-    
+
     msg_ok "Updated Successfully"
   else
     msg_ok "No update required. ${APP} is already at v${RELEASE}."

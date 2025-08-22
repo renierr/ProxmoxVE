@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/renierr/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -38,7 +38,7 @@ function update_script() {
       fetch_and_deploy_gh_release "watchyourlan" "aceberg/WatchYourLAN" "binary"
       cp -R config.yaml /data/config.yaml
       sed -i 's|/etc/watchyourlan/config.yaml|/data/config.yaml|' /lib/systemd/system/watchyourlan.service
-      
+
       msg_info "Cleaning up"
       rm ~/config.yaml
       msg_ok "Cleaned up"

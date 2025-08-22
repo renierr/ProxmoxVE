@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/renierr/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -42,7 +42,7 @@ function update_script() {
     msg_info "Starting ${APP}"
     systemctl start pocketbase
     msg_ok "Started ${APP}"
-    
+
     msg_ok "Update Successful"
   else
     msg_ok "No update required. ${APP} is already at ${RELEASE}"

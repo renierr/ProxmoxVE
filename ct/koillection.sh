@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/renierr/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: bvdberg01
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -36,7 +36,7 @@ function update_script() {
     msg_info "Creating a backup"
     mv /opt/koillection/ /opt/koillection-backup
     msg_ok "Backup created"
-    
+
     fetch_and_deploy_gh_release "koillection" "benjaminjonard/koillection"
 
     msg_info "Updating ${APP} to v${RELEASE}"
