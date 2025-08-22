@@ -55,10 +55,10 @@ msg_ok "Installed OCR Dependencies"
 
 msg_info "Setup JBIG2"
 cd /opt/jbig2enc
-$STD bash ./autogen.sh
-$STD bash ./configure
-$STD make
-$STD make install
+# $STD bash ./autogen.sh
+# $STD bash ./configure
+# $STD make
+# $STD make install
 rm -rf /opt/jbig2enc
 cd /
 msg_ok "Installed JBIG2"
@@ -77,12 +77,6 @@ echo "" >>~/paperless.creds
 echo -e "Paperless-ngx Database User: \e[32m$DB_USER\e[0m" >>~/paperless.creds
 echo -e "Paperless-ngx Database Password: \e[32m$DB_PASS\e[0m" >>~/paperless.creds
 echo -e "Paperless-ngx Database Name: \e[32m$DB_NAME\e[0m" >>~/paperless.creds
-
-msg_info "Installing Natural Language Toolkit (Patience)"
-$STD uv pip install nltk
-$STD uv run -- python -m nltk.downloader -d /usr/share/nltk_data all
-sed -i -e 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
-msg_ok "Installed Natural Language Toolkit"
 
 msg_info "Setup Paperless-ngx"
 cd /opt/paperless
@@ -105,6 +99,12 @@ sed -i \
 cd /opt/paperless/src
 $STD uv run -- python manage.py migrate
 msg_ok "Setup Paperless-ngx"
+
+msg_info "Installing Natural Language Toolkit (Patience)"
+$STD uv pip install nltk
+$STD uv run -- python -m nltk.downloader -d /usr/share/nltk_data all
+sed -i -e 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
+msg_ok "Installed Natural Language Toolkit"
 
 msg_info "Setting up admin Paperless-ngx User & Password"
 cat <<EOF | uv run -- python /opt/paperless/src/manage.py shell
